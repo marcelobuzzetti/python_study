@@ -10,11 +10,9 @@ def main():
     # Extract the title of the webpage
     title = soup.title.text
     print("Page Title:", title)
-    # print page
-    page = soup.prettify()
-    with open("search.html", "w+", encoding="utf-8") as index:
-        index.write(page)
-        index.close()
+    links = soup.find_all("a") # Find all elements with the tag <a>
+    for link in links:
+        print("Link:", link.get("href"), "Text:", link.string)
 
 if __name__ == '__main__':
     main()
