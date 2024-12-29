@@ -18,6 +18,11 @@ def main():
         if item_text and item_href:
             print(item_text)
             print(item_href)
+            print("Parent: ", item.find("a").parent.parent.find("h2").get_text())
+            print("Summary: ", item.find("a").parent.parent.find("p").get_text())
+            children = item.find("h2")
+            print(children.get_text())
+            print("Next Sibling of the h2: ", children.next_sibling)
 
 if __name__ == '__main__':
     main()
