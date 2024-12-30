@@ -13,7 +13,8 @@ def main():
     """
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     search = input("Enter search term: ")
-    folder = f"{timestamp}_{search}"
+    searchSanitized = search.replace(" ", "_").lower()
+    folder = f"{timestamp}_{searchSanitized}"
     if not os.path.exists(folder):
         os.makedirs(folder)
     params = {"q": search}
@@ -31,7 +32,7 @@ def main():
             split = split.replace("&cdn", "")
             # decodificando a url
             decoded_url = unquote(split)
-            print(decoded_url)
+            print(f"Getting: {decoded_url}")
             # pegando a imagem
             try:
                 img_obj = requests.get(decoded_url)
