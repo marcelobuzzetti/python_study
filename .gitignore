@@ -1,3 +1,4 @@
 testenv/
 images/*/
 mongo/db/*
+__pycache__/
