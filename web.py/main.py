@@ -1,13 +1,16 @@
 import web
 
+# Urls accept regex
 urls = (
-    '/', 'index'
+    '/(.*)', 'index'
 )
 
+# Define app
+app = web.application(urls, globals())
+
 class index:
-    def GET(self):
-        return "Hello, world!"
+    def GET(self, name):
+        return f"Hello {name}!"
 
 if __name__ == "__main__":
-    app = web.application(urls, globals())
     app.run()
