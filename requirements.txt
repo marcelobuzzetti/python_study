@@ -2,13 +2,17 @@ beautifulsoup4==4.12.3
 bs4==0.0.2
 certifi==2024.12.14
 charset-normalizer==3.4.0
+cheroot==10.0.1
 dnspython==2.7.0
 idna==3.10
+jaraco.functools==4.1.0
+more-itertools==10.5.0
 pillow==11.0.0
 pymongo==4.10.1
 requests==2.32.3
 simplejson==3.19.3
 soupsieve==2.6
 urllib3==2.3.0
+web.py==0.62
 win11toast==0.35
 winsdk==1.0.0b10
