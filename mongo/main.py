@@ -1,5 +1,7 @@
 from pymongo import MongoClient
+import pymongo
 import datetime
+import pprint
 
 # Connect to mongo
 my_client = MongoClient()
@@ -59,12 +61,15 @@ print(old_date)
 # - $mod: Performs a modulo operation on the value of a field and selects documents with a specified result
 # - $text: Performs text search
 # - $where: Matches documents that satisfy a JavaScript expression
-search = users_collections.find({"date": {"$gte": old_date}})
-for doc in search:
-    print(doc)
-search = users_collections.find({"date": {"$exists": True}})
-for doc in search:
-    print("Exists: ", doc)
-search = users_collections.find({"date": {"$exists": False}})
-for doc in search:
-    print("Not exists: ", doc)
+# search = users_collections.find({"date": {"$gte": old_date}})
+# for doc in search:
+#     print(doc)
+# search = users_collections.find({"date": {"$exists": True}})
+# for doc in search:
+#     print("Exists: ", doc)
+# search = users_collections.find({"date": {"$exists": False}})
+# for doc in search:
+#     pprint.pp(doc)
+# Create index
+# users_collections.create_index([("username", pymongo.ASCENDING)], unique=True)
+# pprint.pp(sorted(list(users_collections.index_information())))
