@@ -1,12 +1,10 @@
 $(() => {
   $("#register-form").on("submit", function (event) {
     event.preventDefault();
-    const formData = {
-        username: document.getElementById('username').value,
-        display_name: document.getElementById('display_name').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value
-    };
+    const formData = {};
+    $(this).serializeArray().forEach(field => {
+        formData[field.name] = field.value;
+    });
 
     fetch('/register', {
         method: 'POST',
