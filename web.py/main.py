@@ -2,7 +2,7 @@ import web
 
 # Urls accept regex and will be passed as arguments to the GET method to index class
 urls = (
-    '/(.*)/(.*)', 'index'
+    '/(.*)/(.*)', 'index' # /name/last_name
 )
 # define templates
 render = web.template.render("resources/")
